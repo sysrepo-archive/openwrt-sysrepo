@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=freenetconfd-plugin-sysrepo
-PKG_VERSION:=2015-04-20
+PKG_VERSION:=2015-05-14
 PKG_RELEASE=$(PKG_SOURCE_VERSION)
 
 PKG_LICENSE:=GPL-2.0+
@@ -17,7 +17,7 @@ PKG_MAINTAINER:=Luka Perkov <luka.perkov@sartura.hr>
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/freenetconf/freenetconfd-plugins.git
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_VERSION:=bdab3fdbe98c1ab90053301f5beedbe6e7e26eb2
+PKG_SOURCE_VERSION:=af2240288a7b4990fec198c52639f19d029a0417
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 
 PKG_BUILD_PARALLEL:=1
@@ -28,13 +28,10 @@ include $(INCLUDE_DIR)/cmake.mk
 define Package/freenetconfd-plugin-sysrepo
   SECTION:=utils
   CATEGORY:=Utilities
-  TITLE:=netconf server
+  TITLE:=freenetconfd plugin for sysrepo
   URL:=http://www.freenetconf.org/
-  DEPENDS:=+freenetconfd +libsysrepo
+  DEPENDS:=+freenetconfd
 endef
-
-CMAKE_OPTIONS = \
-	-DCMAKE_INSTALL_PREFIX=/
 
 define Package/freenetconfd-plugin-sysrepo/install
 	$(INSTALL_DIR) $(1)/usr/lib/freenetconfd
