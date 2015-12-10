@@ -17,7 +17,7 @@ PKG_MAINTAINER:=Luka Perkov <luka.perkov@sartura.hr>
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/sysrepo/configctl.git
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_VERSION:=e7b1d7a1b31948c6e9e689a7636f9bbe3c42a5f2
+PKG_SOURCE_VERSION:=2283defd1bdad583d84392b281844b3bd9936fa9
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 
 PKG_BUILD_PARALLEL:=1
@@ -69,7 +69,7 @@ endef
 define Package/configctl/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/usr/bin/configctl \
+		$(PKG_INSTALL_DIR)/bin/configctl \
 		$(1)/usr/bin/
 endef
 
